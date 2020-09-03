@@ -10,6 +10,10 @@ app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
+// PASSPORT MIDDLEWARE
+app.use(passport.initialize())
+require('./config/passport')(passport)
+
 // ENTRY POINT FOR SERVER
 app.get('/', (req, res) => {
     res.status(200).json({ message: 'Hello, from the backend 🍑'})
