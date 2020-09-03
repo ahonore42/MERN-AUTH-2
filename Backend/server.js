@@ -14,10 +14,14 @@ app.use(express.json())
 app.use(passport.initialize())
 require('./config/passport')(passport)
 
+const users = require('./routes/api/users')
+
 // ENTRY POINT FOR SERVER
 app.get('/', (req, res) => {
     res.status(200).json({ message: 'Hello, from the backend 🍑'})
 })
+
+app.use('/api/users/', users)
 
 app.listen(process.env.PORT || 8000, ()=>{
     console.log(`☕️ You're listening to the smooth sounds of port ${process.env.PORT || 8000} 🦾, clean servers go brrr`)

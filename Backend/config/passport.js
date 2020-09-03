@@ -6,7 +6,8 @@ const jwtStrategy = require('passport-jwt').Strategy
 const ExtractJwt = require('passport-jwt').ExtractJwt
 const mongoose = require('mongoose')
 
-const User = mongoose.model('User')
+
+// const User = mongoose.model('User')
 
 // SETTING JWT OPTIONS
 // Object literal containing options to control
