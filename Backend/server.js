@@ -5,6 +5,8 @@ const cors = require('cors')
 const port = process.env.PORT || 8000
 const passport = require('passport')
 
+const users = require('./routes/api/users')
+
 // MIDDLEWARE FOR SERVER
 app.use(cors())
 app.use(express.urlencoded({ extended: false }))
@@ -14,7 +16,6 @@ app.use(express.json())
 app.use(passport.initialize())
 require('./config/passport')(passport)
 
-const users = require('./routes/api/users')
 
 // ENTRY POINT FOR SERVER
 app.get('/', (req, res) => {
